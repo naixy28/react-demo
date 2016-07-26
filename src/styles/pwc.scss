@@ -6,9 +6,18 @@ body{
     background-color:#dc6900;
     border-color: #dc6900;
     color: #fff;
-    &:hover{
+    &:hover {
       background-color: #d26400;
       border-color: #d26400;
+      color: #fff;
+    }
+    &:active,&:focus{
+      color: #fff;
+      background-color: #025aa5;
+      border-color: #01549b;
+    }
+    &:visited{
+      color: #fff;
     }
   }
 
