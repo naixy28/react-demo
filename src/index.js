@@ -1,9 +1,10 @@
 import 'core-js/fn/object/assign';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Login from './components/LoginComponent';
+//import Login from './components/LoginComponent';
+//import {BasicTableComponent,PRODUCTS} from './components/pwc/table/BasicTableComponent';
 
-
+import {MyTable} from './components/pwc/table/TableComponent';
 
 
 
@@ -11,7 +12,7 @@ import Login from './components/LoginComponent';
 
 
 
-import { Router, Route, Link } from 'react-router'
+/*import { Router, Route, Link } from 'react-router'
 
 const App = React.createClass({
   render() {
@@ -60,7 +61,14 @@ ReactDOM.render((
       </Route>
     </Route>
   </Router>
-), document.body)
+), document.body)*/
 
 
 //ReactDOM.render(<Login />, document.getElementById('app'));
+
+/*
+ReactDOM.render(<BasicTableComponent products={PRODUCTS} />, document.getElementById('app'));
+*/
+
+
+ReactDOM.render(<MyTable/>,document.getElementById('app'));

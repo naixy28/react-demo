@@ -71,6 +71,7 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "core-js": "^2.0.0",
+    "fixed-data-table": "^0.6.2",
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
     "react-bootstrap": "^0.29.5",
