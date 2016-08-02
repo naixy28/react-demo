@@ -12,23 +12,23 @@ function getDefaultModules() {
     loaders: [
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader!autoprefixer-loader!postcss-loader'
+        loader: 'style-loader!css-loader!postcss-loader'
       },
       {
         test: /\.sass/,
-        loader: 'style-loader!css-loader!autoprefixer-loader!postcss-loader!sass-loader?outputStyle=expanded&indentedSyntax'
+        loader: 'style-loader!css-loader!postcss-loader!sass-loader?outputStyle=expanded&indentedSyntax'
       },
       {
         test: /\.scss/,
-        loader: 'style-loader!css-loader!autoprefixer-loader!postcss-loader!sass-loader?outputStyle=expanded'
+        loader: 'style-loader!css-loader!postcss-loader!sass-loader?outputStyle=expanded'
       },
       {
         test: /\.less/,
-        loader: 'style-loader!css-loader!autoprefixer-loader!postcss-loader!less-loader'
+        loader: 'style-loader!css-loader!postcss-loader!less-loader'
       },
       {
         test: /\.styl/,
-        loader: 'style-loader!css-loader!autoprefixer-loader!postcss-loader!stylus-loader'
+        loader: 'style-loader!css-loader!postcss-loader!stylus-loader'
       },
       {
         test: /\.(png|jpg|gif|woff|woff2)$/,
@@ -53,6 +53,6 @@ module.exports = {
   port: dfltPort,
   getDefaultModules: getDefaultModules,
   postcss: function () {
-    return [];
+    return [precss, autoprefixer];
   }
 };

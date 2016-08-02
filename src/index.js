@@ -1,16 +1,16 @@
 import 'core-js/fn/object/assign';
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import Login from './components/LoginComponent';
-//import {BasicTableComponent,PRODUCTS} from './components/pwc/table/BasicTableComponent';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './reducers'
+import TodoApp from './components/TodoApp'
 
-import {MyTable} from './components/pwc/table/TableComponent';
-
-
+/*import Login from './components/LoginComponent';
+import {BasicTableComponent,PRODUCTS} from './components/pwc/table/BasicTableComponent';
+import {MyTable} from './components/pwc/table/TableComponent';*/
 
 // Render the main component into the dom
-
-
 
 /*import { Router, Route, Link } from 'react-router'
 
@@ -63,12 +63,34 @@ ReactDOM.render((
   </Router>
 ), document.body)*/
 
-
 //ReactDOM.render(<Login />, document.getElementById('app'));
 
 /*
 ReactDOM.render(<BasicTableComponent products={PRODUCTS} />, document.getElementById('app'));
 */
 
+/** store 数据结构 sample
+ {
+   visibilityFilter: 'SHOW_ALL',
+   todos: [
+     {
+       text: 'Consider using Redux',
+       completed: true,
+     },
+     {
+       text: 'Keep all state in a single tree',
+       completed: false
+     }
+   ]
+ }
+ */
 
-ReactDOM.render(<MyTable/>,document.getElementById('app'));
+let store = createStore(todoApp);
+
+store.subscribe(()=>{console.log(store.getState())});
+
+ReactDOM.render(
+  <Provider store={store}>
+    <TodoApp />
+  </Provider>,
+  document.getElementById('app'));
