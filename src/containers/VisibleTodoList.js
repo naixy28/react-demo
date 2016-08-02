@@ -2,7 +2,7 @@
  * Created by ryuan018 on 8/1/2016.
  */
 import { connect } from 'react-redux'
-import { toggleTodo } from '../actions'
+import { toggleTodo,deleteTodo } from '../actions'
 import TodoList from '../components/TodoList'
 
 const getVisibleTodos = (todos, filter) => {
@@ -27,6 +27,9 @@ const mapDispatchToProps = (dispatch) => {
   return{
     onTodoClick: (id) => {
       dispatch(toggleTodo(id));
+    },
+    onDeleteTodoClick: (id)=>{
+      dispatch(deleteTodo(id));
     }
   }
 };
